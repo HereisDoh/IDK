@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Profile Clock</title>
+  <title>My Pastel Clock Profile</title>
   <style>
     body {
       margin: 0;
@@ -11,18 +11,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #fcefee; /* pastel background */
+      background: linear-gradient(135deg, #fcefee, #e7f6f2, #fef6e4, #f3e8ff);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
       font-family: 'Segoe UI', sans-serif;
     }
 
     #clock {
       font-size: 5rem;
       font-weight: bold;
-      color: #7d9fcf; /* pastel blue */
-      background: #fef6e4; /* pastel cream */
       padding: 20px 40px;
       border-radius: 20px;
+      background: rgba(255, 255, 255, 0.4); /* soft glass effect */
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      color: #7d9fcf;
+      animation: colorCycle 12s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes colorCycle {
+      0%   { color: #7d9fcf; }  /* pastel blue */
+      25%  { color: #f39ac7; }  /* pastel pink */
+      50%  { color: #f6b26b; }  /* pastel peach */
+      75%  { color: #93c47d; }  /* pastel green */
+      100% { color: #7d9fcf; }  /* back to pastel blue */
     }
   </style>
 </head>
